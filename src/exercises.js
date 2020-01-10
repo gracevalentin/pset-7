@@ -2,8 +2,20 @@ function commonEnd(a, b) {
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
   }
+  else{
 
-  // write your code here
+    const firstValA = a[0];
+    const firstValB = b[0];
+
+    const lastValA = a[a.length - 1];
+    const lastValB = b[b.length - 1];
+
+    if(firstValA === firstValB || lastValA === lastValB){
+      return true;
+    } else {
+      return false
+    }
+  }
 }
 
 function endsMeet(values, n) {
