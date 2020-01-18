@@ -21,8 +21,19 @@ function commonEnd(a, b) {
 
 
 function endsMeet(values, n) {
-  if (values = undefined || values.length < n || n < 0) {
+  if (!values ||values.length < n || n < 0) {
     return [];
+  }
+  else if (n === 0) {
+    return [];
+  }
+  else{
+
+    const firstValue = n[0];
+    const lastValue = n[n.length - 1];
+
+    const newArray = [firstValue, lastValue];
+
   }
 }
 
