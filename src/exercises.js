@@ -21,28 +21,48 @@ function commonEnd(a, b) {
 
 
 function endsMeet(values, n) {
-  if (!values ||values.length < n || n < 0) {
-    return [];
-  }
-  else if (n === 0) {
-    return [];
-  }
-  else{
+  var theArray = [];
 
-    const firstValue = n[0];
-    const lastValue = n[n.length - 1];
-
-    const newArray = [firstValue, lastValue];
-
+  if (!values || values.length === 0) {
+    return theArray;
   }
+  if(values.length < n){
+    return theArray;
+  }
+  if(n % 1 !== 0 || n < 0){
+    return theArray;
+  }
+  else {
+      if (n === 0) {
+        return values;
+      } else {
+        for (let i = 0; i < n; i++) {
+          if (!(values[i] === undefined)) {
+            theArray.push(values[i]);
+          }
+        }
+        for (let i = n; i > 0; i--) {
+          if (!(values[values.length - i] === undefined)) {
+            theArray.push(values[values.length - i]);
+          }
+        }
+        return theArray;
+      }
+   }
 }
-
 
 
 function difference(numbers) {
-  // write your code here
-}
+  let min = Number(Math.min.apply(null, numbers));
+  let max = Number(Math.max.apply(null, numbers));
 
+  if (!numbers || numbers.length < 1 || numbers.some(isNaN)) {
+    return undefined;
+  } else {
+    let answer = max - min;
+    return answer;
+    }
+}
 
 
 function max(number) {
