@@ -137,8 +137,21 @@ function balance(numbers) {
 
 
 function clumps(values) {
-  // write your code here
+  if (!values) {
+    return -1;
+  } else {
+    var count = 0;
+
+    for (var i = 0; i < values.length; i++) {
+      if (values[i] !== values[i - 1] && values[i] == values[i + 1]) {
+        var count = count + 1;
+      }
+    }
+
+return count;
+  }
 }
+
 
 
 
