@@ -61,41 +61,61 @@ function difference(numbers) {
   	}
   }
 
-function max(numbers) {
+function max(number) {
+  if (!number || number.length % 2 == 0 || number.length < 3) {
+  return undefined;
 
-  if (!numbers || numbers.length === 0) {
+} else {
+  for (var i = 0; i < number.length; i++) {
+
+    if (isNaN(number[i])) {
+      var undefined2 = true;
+    }
+  }
+
+  if (undefined2 == true) {
     return undefined;
+
+  } else {
+    const first = number[0];
+    const middle = number[(number.length - 1)/ 2];
+    const last = number[number.length -1];
+
+    var newArray = [first, middle, last];
+
+    const largest = Math.max(...newArray);
+
+    return largest;
   }
-
-  else if (numbers.length < 3 && numbers.length % 2 !== 1) {
-  return undefined;
-} else if (isNaN(numbers)) {
-  return undefined;
-    }
-  }
-
-function middle(values) {
-    var middle = Math.floor(values.length/2);
-    var array = [];
-
-    if (!values || values.length === 0) {
-      return undefined;
-    }
-    if (numbers.length % 2 === 0 || numbers.length < 3 ){
-      return undefined;
-    }
-    else{
-      array.push(values[middle - 1], values[middle], values[middle + 1]);
-      return array;
-    }
-  }
-
-
-function increasing(numbers) {
-  // write your code here
+}
 }
 
 
+function middle(values) {
+  var newArray = [];
+
+  if (!values || values.length % 2 == 0 || values.length < 3) {
+    return newArray;
+
+  } else {
+    const middle = values[(values.length - 1)/ 2];
+    const midMinus = values[((values.length - 1)/ 2)-1]
+    const midPlus = values[((values.length - 1)/ 2)+1]
+
+    newArray.push(midMinus);
+    newArray.push(middle);
+    newArray.push(midPlus);
+
+    return newArray;
+    }
+  }
+//DOESNT PASS ALL TEST CASES
+
+
+function increasing(numbers) {
+
+}
+//DOESNT PASS ALL TEST CASES
 
 function everywhere(values, x) {
   // write your code here
