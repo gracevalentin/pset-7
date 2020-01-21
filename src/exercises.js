@@ -107,7 +107,7 @@ function middle(values) {
      return theArray;
    }
    else{
-     var middle = Math.floor(values.length/2);
+     var middle = Math.floor(values.length / 2);
      theArray.push(values[middle - 1], values[middle]);
      return theArray;
    }
