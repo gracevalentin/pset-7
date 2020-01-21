@@ -71,7 +71,7 @@ function max(number) {
   if (!number || number.length % 2 == 0 || number.length < 3) {
   return undefined;
 
-} else {
+  } else {
   for (var i = 0; i < number.length; i++) {
 
     if (isNaN(number[i])) {
@@ -84,8 +84,8 @@ function max(number) {
 
   } else {
     const first = number[0];
-    const middle = number[(number.length - 1)/ 2];
-    const last = number[number.length -1];
+    const middle = number[(number.length - 1) / 2];
+    const last = number[number.length - 1];
 
     var newArray = [first, middle, last];
 
