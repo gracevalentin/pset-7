@@ -171,7 +171,7 @@ function consecutive(numbers) {
       return false;
     } else {
       for (var i = 0; i < numbers.length -2; i++) {
-        if ((numbers[i]/2) - (Math.floor(numbers[i]/2)) == (numbers[i + 1]/2) - (Math.floor(numbers[i + 1]/2)) && (numbers[i]/2) - (Math.floor(numbers[i]/2)) == (numbers[i + 2]/2) - (Math.floor(numbers[i + 2]/2)) && stop) {
+        if ((numbers[i] / 2) - (Math.floor(numbers[i] / 2)) == (numbers[i + 1] / 2) - (Math.floor(numbers[i + 1] / 2)) && (numbers[i] / 2) - (Math.floor(numbers[i] / 2)) == (numbers[i + 2] / 2) - (Math.floor(numbers[i + 2] / 2)) && stop) {
           return true;
           var stop = false;
         }
