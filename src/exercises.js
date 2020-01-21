@@ -15,8 +15,10 @@ function commonEnd(a, b) {
     } else {
       return false
     }
+    }
   }
-}
+
+
 
 function endsMeet(values, n) {
   var theArray = [];
@@ -47,7 +49,9 @@ function endsMeet(values, n) {
         return theArray;
       }
    }
-}
+ }
+
+
 
 function difference(numbers) {
     var min = Number(Math.min.apply(null, numbers));
@@ -60,6 +64,8 @@ function difference(numbers) {
   		return diff;
   	}
   }
+
+
 
 function max(number) {
   if (!number || number.length % 2 == 0 || number.length < 3) {
@@ -86,53 +92,133 @@ function max(number) {
     const largest = Math.max(...newArray);
 
     return largest;
+    }
   }
 }
-}
+
 
 
 function middle(values) {
-  var newArray = [];
+  let theArray = []
+  if (!values || values.length === 0) {
+     return theArray;
+   }
+   if (values.length % 2 === 0 || values.length < 3 ){
+     return theArray;
+   }
+   else{
+     var middle = Math.floor(values.length/2);
+     theArray.push(values[middle - 1], values[middle]);
+     return theArray;
+   }
+ }
 
-  if (!values || values.length % 2 == 0 || values.length < 3) {
-    return newArray;
-
-  } else {
-    const middle = values[(values.length - 1)/ 2];
-    const midMinus = values[((values.length - 1)/ 2)-1]
-    const midPlus = values[((values.length - 1)/ 2)+1]
-
-    newArray.push(midMinus);
-    newArray.push(middle);
-    newArray.push(midPlus);
-
-    return newArray;
-    }
-  }
-//DOESNT PASS ALL TEST CASES
 
 
 function increasing(numbers) {
+  if (!numbers || numbers.some(isNaN) || Number.isInteger(numbers) || numbers.length < 3) {
+      return undefined;
+    }
+    else {
+      for (let i = 1; i < numbers.length; i++) {
+        if ((numbers[i - 1] + 1) === numbers[i] && numbers[i + 1] - 1 === numbers[i]) {
+            return true;
+            break;
+        }
+      }
+    }
+    return false;
+ }
 
-}
-//DOESNT PASS ALL TEST CASES
+
 
 function everywhere(values, x) {
-  // write your code here
-}
+  var evaluation = true;
+
+   if (!values || values.length < 1 || x == 0) {
+     return false;
+   } else {
+
+     for (var i = 0; i < values.length; i++){
+       if (values[i] !== x && values[i + 1] !== x && values[i - 1] !== x) {
+         var evaluation = false;
+       }
+     }
+
+     if (evaluation) {
+       return true;
+     } else {
+       return false;
+     }
+   }
+
+ }
+
 
 
 
 function consecutive(numbers) {
-  // write your code here
-}
+  var stop = true;
+  if (!numbers || numbers.length < 3) {
+    return false;
+  } else {
+    for (var i = 0; i < numbers.length; i++) {
+      if (isNaN(numbers[i]) || numbers[i] != Math.round(numbers[i])) {
+        var undefined2 = true;
+      }
+    }
+    if (undefined2) {
+      return false;
+    } else {
+      for (var i = 0; i < numbers.length -2; i++) {
+        if ((numbers[i]/2) - (Math.floor(numbers[i]/2)) == (numbers[i + 1]/2) - (Math.floor(numbers[i + 1]/2)) && (numbers[i]/2) - (Math.floor(numbers[i]/2)) == (numbers[i + 2]/2) - (Math.floor(numbers[i + 2]/2)) && stop) {
+          return true;
+          var stop = false;
+        }
+      }
+      if (stop != false) {
+        return false
+      }
+    }
+  }
+  }
 
 
 
 function balance(numbers) {
-  // write your code here
+  if (!numbers || numbers.length === 0) {
+   return false;
+  }
+
+  var length = numbers.length;
+
+  if ( length < 2 ) {
+     return false;
+   }
+
+  let leftSum = 0;
+
+  for (i = 0; i < length; i++) {
+
+     if (isNaN(numbers[i])) {
+       return false;
+     }
+
+     leftSum += numbers[i];
+
+   }
+   let rightSum = 0;
+   for(i = length - 1; i >= 0; i--) {
+     rightSum += numbers[i];
+     leftSum -= numbers[i];
+     if(leftSum == rightSum) {
+       return true;
+     }
+   }
+   return false;
+
   console.log("test");
-}
+  }
 
 
 
@@ -148,11 +234,9 @@ function clumps(values) {
       }
     }
 
-return count;
+  return count;
   }
 }
-
-
 
 
 /*
